@@ -1,0 +1,367 @@
+$red: #FF101F;
+$blue: #3772FF;
+$flax: #e3de8f;
+$cream: #edfbc1;
+$white: #ffffff;
+$ash_gray: #bfcbc2;
+$black: #000000;
+
+* {
+  margin: 0;
+
+  p, h1, h2, h3, h4, h5, h6, a, img, input, button, label, textarea, select, option, div {
+    font-family: "new-order", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    color: $black;
+
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+  }
+
+  h1 {
+    text-align: center;
+    margin: 1em;
+    color: $blue;
+  }
+
+  a {
+    cursor: pointer;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    height: 12vh;
+    width: 100%;
+    vertical-align: middle;
+    background-color: $blue;
+
+    a {
+      color: $white;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .start {
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      vertical-align: middle;
+
+      .logo {
+        width: 16vw;
+        height: 10vh;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin: 10px;
+      }
+
+      .post {
+        background-color: red;
+        display: flex;
+        vertical-align: middle;
+        align-content: center;
+        margin: 10px;
+        height: 50px;
+        width: 150px;
+        border-radius: 20px;
+        flex-wrap: wrap;
+        cursor: pointer;
+
+        a {
+          width: 100%;
+        }
+      }
+    }
+
+    .end {
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      vertical-align: middle;
+
+      a {
+        margin: 1.5vw;
+      }
+
+    }
+  }
+
+  main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+
+    h1, h2 {
+      color: $blue;
+      text-align: center;
+      font-size: 2rem;
+      padding: 0.5em;
+
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    div {
+      border: 1px solid $ash_gray;
+      border-radius: 20px;
+      padding: 2em;
+      margin: 1em;
+      width: 75%;
+
+      div {
+
+        border: none;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h3 {
+          color: $blue;
+          font-size: 1.5rem;
+          margin-bottom: 0.5em;
+        }
+
+        .date {
+          color: $ash_gray;
+          font-size: 1rem;
+          text-align: end;
+        }
+      }
+
+      a, p {
+        margin-left: 1em;
+        margin-top: 1vh;
+      }
+
+      a {
+        font-size: 1.25rem;
+      }
+
+    }
+  }
+
+  #register {
+    height: 50vh;
+  }
+
+  #login, #register {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    margin: 10vh;
+    height: 50vh;
+
+    div {
+      width: 20em;
+      text-align: center;
+
+      label {
+        width: 100%;
+      }
+
+      input {
+        width: 20em;
+        height: 2em;
+        border: 2px solid $blue;
+        border-radius: 20px;
+        padding: 0.5em;
+        margin: 0.5em;
+      }
+    }
+
+    button {
+      cursor: pointer;
+      width: 12em;
+      height: 2em;
+      background: $blue;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      border-radius: 20px;
+    }
+
+
+  }
+
+  #post {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    h1 {
+      color: $blue;
+      font-size: 3rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    input, textarea {
+      border: 2px solid $blue;
+      width: 60vw;
+      border-radius: 20px;
+      padding: 0.5em;
+      display: flex;
+      text-align: start;
+      margin-bottom: 8vh;
+      margin-top: 2vh;
+    }
+
+    input {
+      height: 2em;
+    }
+
+    textarea {
+      height: 20vw;
+    }
+
+    button {
+      cursor: pointer;
+      width: 12em;
+      height: 2em;
+      background: $blue;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      border-radius: 20px;
+      margin: 4vh;
+    }
+  }
+
+  #read {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    h2 {
+      color: $blue;
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      margin:1vh;
+    }
+
+    #comment{
+      width: 60vw;
+      border-radius: 20px;
+      border: 2px solid $blue;
+      margin:2vh;
+      text-align: start;
+      padding: 20px;
+
+      p{
+        margin-bottom: 2vh;
+      }
+    }
+
+    #readPost p{
+      width: 60vw;
+      height: 20vh;
+      border-radius: 20px;
+      border: 2px solid $blue;
+      margin:2vh;
+      text-align: start;
+      padding: 20px;
+    }
+
+    textarea{
+      border: 2px solid $blue;
+      width: 60vw;
+      border-radius: 20px;
+      padding: 20px;
+      display: flex;
+      text-align: start;
+      margin-bottom: 8vh;
+      margin-top: 2vh;
+    }
+    button {
+      cursor: pointer;
+      width: 12em;
+      height: 2em;
+      background: $blue;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      border-radius: 20px;
+      margin: 4vh;
+    }
+  }
+
+  #error {
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+
+    img {
+      width: 30vw;
+      height: 30vh;
+      border-radius: 0.5em;
+      box-shadow: -1px 0px 16px 2px rgba(0, 0, 0, 0.19);
+      margin: 6vh;
+    }
+
+    h2 {
+      margin: 1vh;
+    }
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    height: 32vh;
+    width: 100%;
+    vertical-align: middle;
+    background-color: $blue;
+    margin-top: 2em;
+
+    a, p {
+      color: $white;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+
+    a {
+      width: 100%;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+    }
+  }
+}
+
+
+
+
+
