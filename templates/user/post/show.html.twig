@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Blog Pas Cringe! - Lire un post{% endblock %}
+
+{% block body %}
+    <div id="read">
+        <div id="readPost">
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.description }}</p>
+            <p>{{ post.content }}</p>
+        </div>
+
+        {% include 'user/comment/_from.html.twig' with { 'commentForm': commentForm } %}
+
+        {% for comment in comments %}
+            <div id="comment">
+            <p>{{ comment.content }}</p>
+            <p>Publier par : {{ comment.username }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

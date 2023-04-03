@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Blog Pas Cringe! - Page d'accueil{% endblock %}
+
+{% block body %}
+    <main>
+        <h1>Home page</h1>
+
+        <h2>Les 5 derniers post</h2>
+
+        {% for post in posts %}
+            <div class="post">
+                <div>
+                    <h3>{{ post.title }}</h3>
+                    <p class="date">Publier le : {{ post.getPublishedAt().format('d/m/Y H:i:s') }}</p>
+                </div>
+                <p>{{ post.description }}</p>
+                <a href="{{ path('app_post_show', {'slug': post.slug}) }}">Lire le post !</a>
+            </div>
+        {% endfor %}
+    </main>
+{% endblock %}

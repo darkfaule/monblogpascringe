@@ -1,0 +1,8 @@
+<div id="post">
+    {{ form_start(postForm) }}
+    {{ form_row(postForm.title) }}
+    {{ form_row(postForm.description) }}
+    {{ form_row(postForm.content) }}
+    <button type="submit">{{ button_label|default('Ajouter') }}</button>
+    {{ form_end(postForm) }}
+</div>
