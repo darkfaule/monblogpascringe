@@ -62,7 +62,7 @@ class PostController extends AbstractController
             $em->persist($post);
             $em->flush();
 
-            return $this->redirectToRoute('app_admin_post_index');
+            return $this->redirectToRoute('app_post_show', ['slug' => $post->getSlug()]);
         }
 
         return $this->render('admin/post/create.html.twig', [
@@ -75,9 +75,11 @@ class PostController extends AbstractController
      * 
      * @Route("/edit/{id}", name="edit")
      */
-    public function edit(Post $post, Request $request, EntityManagerInterface $em, SluggerInterface $slugger): Response 
+    public function edit(Post $post, CategoryRepository $categoryRepository, Request $request, EntityManagerInterface $em, SluggerInterface $slugger): Response 
     {
-        $postForm = $this->createForm(PostFormType::class, $post);
+        $postForm = $this->createForm(PostFormType::class, $post, [
+            'categories' => $categoryRepository->findAll(),
+        ]);
 
         $postForm->handleRequest($request);
 
@@ -96,7 +98,7 @@ class PostController extends AbstractController
             $em->persist($post);
             $em->flush();
 
-            return $this->redirectToRoute('app_admin_post_index');
+            return $this->redirectToRoute('app_post_show', ['slug' => $post->getSlug()]);
         }
 
         return $this->render('admin/post/edit.html.twig', [

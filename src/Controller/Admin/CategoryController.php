@@ -39,10 +39,11 @@ class CategoryController extends AbstractController {
         
         $category = new Category();
         $categoryForm = $this->createForm(CategoryFormType::class, $category, [
-            'posts' => $postRepository->findAll()
+            'posts' => $postRepository->findAll(),
         ]);
 
         $categoryForm->handleRequest($request);
+        
         if ($categoryForm->isSubmitted() && $categoryForm->isValid()) {
             $category = $categoryForm->getData();
 

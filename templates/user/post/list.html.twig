@@ -13,6 +13,9 @@
                 </div>
                 <p>{{ post.description }}</p>
                 <a href="{{ path('app_post_show', {'slug': post.slug}) }}">Lire le post</a>
+                {% if is_granted("ROLE_ADMIN") %}
+                    <a href="{{ path('app_admin_post_edit', {'id': post.id}) }}">Modifier le poste</a>
+                {% endif %}
             </div>
         {% endfor %}
     </main>

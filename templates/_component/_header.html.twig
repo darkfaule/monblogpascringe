@@ -10,7 +10,14 @@
 
     </div>
     <div class="end">
-        <a href="{{ path("app_post_index") }}">Postes</a>
+
+        {% if is_granted("ROLE_ADMIN") %}
+            <div class="post">
+                <a href="{{ path("app_admin") }}">Administration</a>
+            </div>
+        {% endif %}
+
+        <a href="{{ path("app_post_list") }}">Postes</a>
         {% if app.user %}
             <a href="{{ path("app_logout") }}">Déconnexion</a>
         {% else %}
