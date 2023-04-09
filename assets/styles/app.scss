@@ -8,6 +8,7 @@ $black: #000000;
 
 * {
   margin: 0;
+  overflow-x: hidden;
 
   p, h1, h2, h3, h4, h5, h6, a, img, input, button, label, textarea, select, option, div {
     font-family: "new-order", sans-serif;
@@ -32,7 +33,26 @@ $black: #000000;
     cursor: pointer;
   }
 
+  li{
+    color: white;
+    background-color: $blue;
+    padding: 0 1rem;
+    height: 1.5em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    margin: 0 0.35vw;
+  }
+
+  ul{
+    display: flex;
+    margin: 2vh 0;
+  }
+
   header {
+    overflow: hidden;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -110,24 +130,38 @@ $black: #000000;
 
     }
 
+    a.admin{
+      display: flex;
+      color: $white;
+      background-color: $blue;
+      height: 5vh;
+      width: 40vw;
+      border-radius: 20px;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+
+    }
+
     h1 {
       font-size: 3rem;
       font-weight: 700;
     }
 
     div {
-      border: 1px solid $ash_gray;
-      border-radius: 20px;
+      border: 1px solid $blue;
+      border-radius: 15px;
+      width: 75vw;
       padding: 2em;
-      margin: 1em;
-      width: 75%;
+      margin: 2vh;
 
       div {
 
         border: none;
+        padding: 0;
         width: 100%;
         margin: 0;
-        padding: 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -154,6 +188,38 @@ $black: #000000;
         font-size: 1.25rem;
       }
 
+
+    }
+    button {
+      margin: 2vh;
+       cursor: pointer;
+       width: 12em;
+       height: 2em;
+       background: $blue;
+       border: none;
+       color: white;
+       font-size: 1.5rem;
+       border-radius: 20px;
+     }
+    label{
+      text-align: center;
+      display: flex;
+      justify-content: center;
+    }
+    input {
+        width: 15em;
+        height: 2em;
+        border: 2px solid $blue;
+        border-radius: 20px;
+        padding: 0.5em;
+        margin: 0.5em;
+      }
+    form div{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
   }
 
@@ -280,7 +346,6 @@ $black: #000000;
 
     #readPost p{
       width: 60vw;
-      height: 20vh;
       border-radius: 20px;
       border: 2px solid $blue;
       margin:2vh;
@@ -332,13 +397,15 @@ $black: #000000;
     }
   }
 
+
+
   footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
     align-content: center;
     height: 32vh;
-    width: 100%;
+    width: 100vw;
     vertical-align: middle;
     background-color: $blue;
     margin-top: 2em;

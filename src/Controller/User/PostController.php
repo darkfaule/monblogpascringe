@@ -23,15 +23,6 @@ use Symfony\Component\HttpFoundation\Request;
 class PostController extends AbstractController {
 
     /**
-     * Handles the post page into a response.
-     * 
-     * @Route("", name="index")
-     */
-    public function index(): Response {
-        return $this->render('user/post/index.html.twig');
-    }
-
-    /**
      * Handles the show post page into a response.
      * 
      * @Route("/show/{slug}", name="show")

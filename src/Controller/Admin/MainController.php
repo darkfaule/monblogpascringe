@@ -7,24 +7,20 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * CommentController is a controller made to handle comment as an admin.
+ * MainController is a controller made to handle the manage page.
  * 
  * @author      Rudy Boullier   <rudy.boullier@etu.univ-lyon1.fr>
  * @author      Melvyn Delpree  <melvyn.delpree@etu.univ-lyon1.fr>
- * 
- * @Route("/admin/comment", name="app_admin_comment_")
  */
-class CommentController extends AbstractController {
-
+class MainController extends AbstractController
+{
     /**
-     * Handles the comment page into a response.
+     * Handles the manage page into a response.
      * 
-     * @Route("", name="index")
+     * @Route("/admin", name="app_admin_index")
      */
-    public function index(): Response {
-        return $this->render('base.html.twig');
+    public function index(): Response
+    {
+        return $this->render('admin/index.html.twig');
     }
-
 }
-
-?>

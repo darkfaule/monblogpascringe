@@ -14,15 +14,7 @@ class CategoryFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name')
-            ->add('posts', EntityType::class, [
-                'class' => Post::class,
-                'choices' => $options['posts'],
-                'multiple' => true,
-                'expanded' => true,
-                'required' => false,
-            ])
-        ;
+            ->add('name');
     }
 
     public function configureOptions(OptionsResolver $resolver): void

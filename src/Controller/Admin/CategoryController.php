@@ -22,15 +22,6 @@ use Symfony\Component\HttpFoundation\Request;
 class CategoryController extends AbstractController {
 
     /**
-     * Handles the category page into a response.
-     * 
-     * @Route("", name="index")
-     */
-    public function index(): Response {
-        return $this->render('admin/category/index.html.twig');
-    }
-
-    /**
      * Handles the create category page into a response.
      * 
      * @Route("/create", name="create")
@@ -39,17 +30,18 @@ class CategoryController extends AbstractController {
         
         $category = new Category();
         $categoryForm = $this->createForm(CategoryFormType::class, $category, [
-            'posts' => $postRepository->findAll()
+            'posts' => $postRepository->findAll(),
         ]);
 
         $categoryForm->handleRequest($request);
+        
         if ($categoryForm->isSubmitted() && $categoryForm->isValid()) {
             $category = $categoryForm->getData();
 
             $em->persist($category);
             $em->flush();
 
-            return $this->redirectToRoute('app_admin_category_index');
+            return $this->redirectToRoute('app_admin_index');
         }
 
         return $this->render('admin/category/create.html.twig', [

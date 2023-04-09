@@ -16,22 +16,12 @@ use Symfony\Component\HttpFoundation\Request;
  * PostController is a controller made to handle post as an admin.
  * 
  * @author  Rudy Boullier   <rudy.boullier@etu.univ-lyon1.fr>
- *          Melvyn Delpree  <melvyn.delpree@etu.univ-lyon1.fr>
+ * @author  Melvyn Delpree  <melvyn.delpree@etu.univ-lyon1.fr>
  * 
  * @Route("/admin/post", name="app_admin_post_")
  */
 class PostController extends AbstractController 
 {
-    /**
-     * Handles the post page into a response.
-     * 
-     * @Route("", name="index")
-     */
-    public function index(): Response 
-    {
-        return $this->render('base.html.twig');
-    }
-
     /**
      * Handles the create post page into a response.
      * 
@@ -62,7 +52,7 @@ class PostController extends AbstractController
             $em->persist($post);
             $em->flush();
 
-            return $this->redirectToRoute('app_admin_post_index');
+            return $this->redirectToRoute('app_post_show', ['slug' => $post->getSlug()]);
         }
 
         return $this->render('admin/post/create.html.twig', [
@@ -75,9 +65,11 @@ class PostController extends AbstractController
      * 
      * @Route("/edit/{id}", name="edit")
      */
-    public function edit(Post $post, Request $request, EntityManagerInterface $em, SluggerInterface $slugger): Response 
+    public function edit(Post $post, CategoryRepository $categoryRepository, Request $request, EntityManagerInterface $em, SluggerInterface $slugger): Response 
     {
-        $postForm = $this->createForm(PostFormType::class, $post);
+        $postForm = $this->createForm(PostFormType::class, $post, [
+            'categories' => $categoryRepository->findAll(),
+        ]);
 
         $postForm->handleRequest($request);
 
@@ -96,7 +88,7 @@ class PostController extends AbstractController
             $em->persist($post);
             $em->flush();
 
-            return $this->redirectToRoute('app_admin_post_index');
+            return $this->redirectToRoute('app_post_show', ['slug' => $post->getSlug()]);
         }
 
         return $this->render('admin/post/edit.html.twig', [
