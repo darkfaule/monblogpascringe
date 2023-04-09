@@ -1,1 +1,10 @@
-Ce blog sera aussi cringe que les deux mandats de Barack Obama, c'est-à-dire pas du tout.
+# MonBlogPasCringe
+
+## Membre
+
+- Melvyn Delpree
+- Rudy boullier
+
+## Projet
+
+Nous devions réaliser un blog en utilisant un framework qui était symfony
