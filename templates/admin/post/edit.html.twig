@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Blog Pas Cringe! - Modier un post{% endblock %}
+
+{% block body %}
+    <h1>Modifier un nouveau post</h1>
+
+    {% include "admin/post/_from.html.twig" with {'button_label': 'Modifier'} %}
+{% endblock %}

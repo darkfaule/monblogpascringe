@@ -1,0 +1,25 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+    .logo {
+        width: 100px;
+        height: 100px;
+        background-size: contain;
+    }
+
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 50%;
+        height: 100px;
+        background: url('../images/nav.png') no-repeat;
+        background-size: contain;
+    }
+
+  .post {
+    background-color: var(--old_gold);
+  }
+}

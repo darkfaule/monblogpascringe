@@ -1,0 +1,13 @@
+<div id="post">
+    {{ form_start(postForm) }}
+        {{ form_row(postForm.title) }}
+        {{ form_row(postForm.description) }}
+        {{ form_row(postForm.content) }}
+        
+        <h3>Catégories</h3>
+        {{ form_row(postForm.categories) }}
+        
+        <a href="{{ path('app_admin_category_create') }}">Créer une nouvelle catégorie</a>
+        <button type="submit">{{ button_label|default('Ajouter') }}</button>
+    {{ form_end(postForm) }}
+</div>

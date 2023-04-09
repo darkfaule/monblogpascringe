@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{% block title %}Mon Blog Pas Cringe!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="https://use.typekit.net/hxv3lpd.css">
+        <link rel="stylesheet" href="/build/app.css">
+    </head>
+    <body>
+
+        {% include '_component/_header.html.twig' %}
+
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+
+        {% include '_component/_footer.html.twig' %}
+
+    </body>
+</html>

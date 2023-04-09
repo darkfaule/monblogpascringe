@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+<main>
+    <h1>Post</h1>
+    <a class="admin" href="{{ path("app_admin_post_create") }}">Crée un post</a>
+    <h1>Catégorie</h1>
+    <a class="admin" href="{{ path("app_admin_category_create") }}">Crée une nouvelle catégorie</a>
+</main>
+{% endblock %}
