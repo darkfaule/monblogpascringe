@@ -17,12 +17,10 @@ class MainController extends AbstractController
     /**
      * Handles the manage page into a response.
      * 
-     * @Route("/admin", name="app_admin")
+     * @Route("/admin", name="app_admin_index")
      */
     public function index(): Response
     {
-        return $this->render('admin/index.html.twig', [
-            'controller_name' => 'AdminController',
-        ]);
+        return $this->render('admin/index.html.twig');
     }
 }

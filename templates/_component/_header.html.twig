@@ -1,19 +1,12 @@
 <header class="header">
     <div class="start">
         <a href="{{ path("app_home") }}"><img src="/logo.png" alt="logo" class="logo"></a>
-
-        {% if is_granted("ROLE_ADMIN") %}
-            <div class="post">
-                <a href="{{ path("app_admin_post_create") }}">Poster</a>
-            </div>
-        {% endif %}
-
     </div>
     <div class="end">
 
         {% if is_granted("ROLE_ADMIN") %}
             <div class="post">
-                <a href="{{ path("app_admin") }}">Administration</a>
+                <a href="{{ path("app_admin_index") }}">Administration</a>
             </div>
         {% endif %}
 

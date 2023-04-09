@@ -16,22 +16,12 @@ use Symfony\Component\HttpFoundation\Request;
  * PostController is a controller made to handle post as an admin.
  * 
  * @author  Rudy Boullier   <rudy.boullier@etu.univ-lyon1.fr>
- *          Melvyn Delpree  <melvyn.delpree@etu.univ-lyon1.fr>
+ * @author  Melvyn Delpree  <melvyn.delpree@etu.univ-lyon1.fr>
  * 
  * @Route("/admin/post", name="app_admin_post_")
  */
 class PostController extends AbstractController 
 {
-    /**
-     * Handles the post page into a response.
-     * 
-     * @Route("", name="index")
-     */
-    public function index(): Response 
-    {
-        return $this->render('base.html.twig');
-    }
-
     /**
      * Handles the create post page into a response.
      * 
