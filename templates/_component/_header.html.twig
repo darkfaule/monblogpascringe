@@ -5,9 +5,7 @@
     <div class="end">
 
         {% if is_granted("ROLE_ADMIN") %}
-            <div class="post">
                 <a href="{{ path("app_admin_index") }}">Administration</a>
-            </div>
         {% endif %}
 
         <a href="{{ path("app_post_list") }}">Postes</a>
